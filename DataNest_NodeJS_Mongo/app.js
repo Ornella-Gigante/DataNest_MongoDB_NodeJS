@@ -25,6 +25,15 @@ app.use(bodyParser.json());
 
 //rutas! 
 
+
+
+app.get('/', (req, res) => {
+    // Enviamos directamente una cadena HTML como respuesta
+    res.status(200).send('<h1>Home Page</h1>');
+});
+
+
+
 app.get('/test', (req,res)  => {
     res.status(200).send({
 
