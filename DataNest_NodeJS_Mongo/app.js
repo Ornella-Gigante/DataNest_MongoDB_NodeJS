@@ -44,6 +44,20 @@ app.get('/test', (req,res)  => {
 });
 
 
+app.post('/test', (req,res)  => {
+
+    console.log(req);
+    
+    res.status(200).send({
+
+        message: "Using POST in Postman :) "
+
+    });
+
+});
+
+
+
 // exportar 
 
 module.exports = app; 
