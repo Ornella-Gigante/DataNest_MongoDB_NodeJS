@@ -44,11 +44,21 @@ app.get('/test', (req,res)  => {
 });
 
 
-app.post('/test', (req,res)  => {
+app.post('/test/:id', (req,res)  => {
 
+
+
+    // Que se vean datos especificos en consola de POST usando params desde website
+    // POST = http://localhost:3700/test/01?web=https://www.linkedin.com/in/ornella-gigante
+     console.log(req.params.id);
 
     // Que se vean datos especificos en consola de POST desde Postman (body) 
+    // http://localhost:3700/test
     console.log(req.body.name);
+
+    // Que se vean datos especificos en consola de POST usando query desde website
+    // http://localhost:3700/test/web=https://www.linkedin.com/in/ornella-gigante
+    console.log(req.query.web);
 
 
     res.status(200).send({
