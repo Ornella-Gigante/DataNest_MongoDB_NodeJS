@@ -46,11 +46,14 @@ app.get('/test', (req,res)  => {
 
 app.post('/test', (req,res)  => {
 
-    console.log(req);
-    
+
+    // Que se vean datos especificos en consola de POST desde Postman (body) 
+    console.log(req.body.name);
+
+
     res.status(200).send({
 
-        message: "Using POST in Postman :) "
+        message: "Using POST in Postman :)"
 
     });
 
