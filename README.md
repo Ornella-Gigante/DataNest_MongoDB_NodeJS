@@ -5,7 +5,7 @@ This is my first project using NodeJS and MongoBD as persistence. This will be a
 
 Follow these steps to set up and run the application:
 
-1- Start MongoDB
+1. Start MongoDB
 Open a terminal and run the following command to start the MongoDB server:
         bash
         mongod
