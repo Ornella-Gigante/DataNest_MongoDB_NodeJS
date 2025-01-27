@@ -14,4 +14,7 @@ router.get('/home', ProjectController.home);
 // Cuando un cliente envía datos a esta ruta, se ejecuta la función test del ProjectController.
 router.post('/test', ProjectController.test);
 
+
+router.post('/save-project', ProjectController.saveProject); 
+
 module.exports = router; 
