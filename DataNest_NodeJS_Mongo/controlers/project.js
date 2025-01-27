@@ -1,5 +1,6 @@
 'use strict'
 
+const project = require('../models/project');
 // Importación del modelo 
 var Project = require('../models/project'); 
 
@@ -33,7 +34,31 @@ var controller = {
             .catch(err => {
                 return res.status(500).send({ message: 'Error saving the project', error: err.message });
             });
+    },
+
+
+    // CReacion metodo que reciba request y una respuesta 
+
+    // Devolvera el objeto que se solicite 
+
+
+    getProject: function(req, res) {
+        var projectId = req.params.id;
+
+        if(projectId == null) return res.status(404).send({message:'El proyecto no existe'});
+    
+        Project.findById(projectId)
+            .then(project => {
+                if (!project) {
+                    return res.status(404).send({ message: 'Not found' });
+                }
+                return res.status(200).send({ project });
+            })
+            .catch(err => {
+                return res.status(500).send({ message: 'Error retrieving the data', error: err.message });
+            });
     }
+    
 };
 
 // Exporta el objeto controller para que pueda ser utilizado en otros archivos del proyecto

@@ -14,7 +14,10 @@ router.get('/home', ProjectController.home);
 // Cuando un cliente envía datos a esta ruta, se ejecuta la función test del ProjectController.
 router.post('/test', ProjectController.test);
 
-
+// Ruta para giardar proyecto creado
 router.post('/save-project', ProjectController.saveProject); 
+// Ruta para ver el proyecto seleccionado con id opcional (?)
+// El id debe ser tal cual en mongodb
+router.get('/project/:id?', ProjectController.getProject)
 
 module.exports = router; 
