@@ -23,4 +23,6 @@ router.get('/project/:id?', ProjectController.getProject)
 router.get('/projects', ProjectController.getProjects);
 //Ruta de la actualizacion 
 router.put('/project/:id', ProjectController.updateProject);
+// Ruta de borrado 
+router.delete('/project/:id',ProjectController.deleteProject);
 module.exports = router; 
