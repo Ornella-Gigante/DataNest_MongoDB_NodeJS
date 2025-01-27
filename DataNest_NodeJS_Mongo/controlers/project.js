@@ -2,11 +2,22 @@
 
 var controller = {
 
-    home: function(){
+    home: function(req, res){
+
+        return res.status(200).send({
+
+            message: 'Home Page'
+
+        });
 
     },
 
-    test: function(){
+    test: function(req, res){
+        return res.status(200).send({
+
+            message: 'Im the test of the controller of the project'
+
+        });
 
     }
 }; 
