@@ -20,6 +20,7 @@ router.post('/save-project', ProjectController.saveProject);
 // El id debe ser tal cual en mongodb
 router.get('/project/:id?', ProjectController.getProject)
 // Ruta de la lista 
-
 router.get('/projects', ProjectController.getProjects);
+//Ruta de la actualizacion 
+router.put('/project/:id', ProjectController.updateProject);
 module.exports = router; 

@@ -73,7 +73,28 @@ var controller = {
             .catch(err => {
                 return res.status(500).send({ message: 'Error retrieving the projects', error: err.message });
             });
-    }
+    },
+
+
+    //Creacion de metodo para acutalizar datos 
+    // new:true sera el elemento actualizado 
+
+    updateProject: function(req, res) {
+        var projectId = req.params.id;
+        var update = req.body;
+    
+        Project.findByIdAndUpdate(projectId, update, { new: true }) 
+            .then(project => {
+                if (!project) {
+                    return res.status(404).send({ message: 'Not found' });
+                }
+                return res.status(200).send({ project });
+            })
+            .catch(err => {
+                return res.status(500).send({ message: 'Error', error: err.message });
+            });
+    },
+    
     
     
 };
