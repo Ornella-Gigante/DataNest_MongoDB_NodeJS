@@ -23,7 +23,16 @@ app.use(bodyParser.json());
 //CORS 
 
 
+// Cargar archivo de ruta 
 
+var project_rutes = require('./rutas/project');
+
+
+
+// Ruta 
+
+
+app.use('/api', project_rutes);
 // exportar 
 
 module.exports = app; 
