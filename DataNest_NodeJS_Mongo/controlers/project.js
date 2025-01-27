@@ -96,6 +96,25 @@ var controller = {
     },
     
     
+    // Creacion de metodo para borrar datos 
+
+    deleteProject: function(req, res) {
+        var projectId = req.params.id;
+    
+        Project.findByIdAndDelete(projectId)
+            .then(projectDeleted => {
+                if (!projectDeleted) {
+                    return res.status(404).send({ message: 'Project not found' });
+                }
+                return res.status(200).send({ 
+                    message: 'Project successfully deleted',
+                    project: projectDeleted 
+                });
+            })
+            .catch(err => {
+                return res.status(500).send({ message: 'Error deleting the project', error: err.message });
+            });
+    }
     
 };
 
