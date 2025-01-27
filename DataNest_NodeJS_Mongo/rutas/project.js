@@ -19,5 +19,7 @@ router.post('/save-project', ProjectController.saveProject);
 // Ruta para ver el proyecto seleccionado con id opcional (?)
 // El id debe ser tal cual en mongodb
 router.get('/project/:id?', ProjectController.getProject)
+// Ruta de la lista 
 
+router.get('/projects', ProjectController.getProjects);
 module.exports = router; 

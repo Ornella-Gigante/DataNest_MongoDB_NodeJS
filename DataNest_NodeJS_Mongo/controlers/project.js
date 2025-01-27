@@ -57,7 +57,23 @@ var controller = {
             .catch(err => {
                 return res.status(500).send({ message: 'Error retrieving the data', error: err.message });
             });
+    },
+
+    // Metodo que devolvera un listado de elementos de la bbdd 
+
+    getProjects: function(req, res) {
+        Project.find({})
+            .then(projects => {
+                if (!projects || projects.length === 0) {
+                    return res.status(404).send({ message: 'Not found' });
+                }
+                return res.status(200).send({ projects });
+            })
+            .catch(err => {
+                return res.status(500).send({ message: 'Error retrieving the projects', error: err.message });
+            });
     }
+    
     
 };
 
