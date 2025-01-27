@@ -63,6 +63,7 @@ var controller = {
 
     getProjects: function(req, res) {
         Project.find({})
+            .sort({year:1}) //ordena de menor a mayor por parametro year (si fuera de mayor a menor sería -1)
             .then(projects => {
                 if (!projects || projects.length === 0) {
                     return res.status(404).send({ message: 'Not found' });
