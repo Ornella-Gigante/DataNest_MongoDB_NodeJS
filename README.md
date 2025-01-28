@@ -2,6 +2,7 @@
 Welcome to DataNest, my first go-to project using the integration of MongoDB and Node.js! This will be a simple API-REST app in which I will create a MongoDB database, create a server with NodeJS, use a RESTful client and use a MVC model🚀 This repository demonstrates how to build a robust backend application using modern JavaScript technologies. Whether you're a beginner like me or an experienced developer, this project is designed to help you understand the fundamentals and advanced concepts of working with databases and backend development.
 
 ## 📋 Table of Contents
+📋 Table of Contents
 ✨ Features
 📦 Technologies Used
 ⚙️ Installation
