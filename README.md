@@ -14,7 +14,7 @@ Welcome to DataNest, my first go-to project using the integration of MongoDB and
 📄 License
 
 
-## ✨ Features
+✨ Features
 ✔️ RESTful API built with Express.js
 ✔️ CRUD operations (Create, Read, Update, Delete) for managing data
 ✔️ MongoDB database integration with Mongoose
