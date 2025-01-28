@@ -25,4 +25,7 @@ router.get('/projects', ProjectController.getProjects);
 router.put('/project/:id', ProjectController.updateProject);
 // Ruta de borrado 
 router.delete('/project/:id',ProjectController.deleteProject);
+// Ruta para las imagenes 
+router.post('/upload-image/:id', ProjectController.uploadImage);
+
 module.exports = router; 

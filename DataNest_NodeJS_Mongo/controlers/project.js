@@ -114,6 +114,28 @@ var controller = {
             .catch(err => {
                 return res.status(500).send({ message: 'Error deleting the project', error: err.message });
             });
+    },
+
+
+    // Creacion de metodo para subir imagen 
+
+    uploadImage: function(req, res){
+
+        var projectId = req.params.id; 
+        var fileName = 'Imagen no subida';
+
+        if(req.files){
+
+            return res.status(200).send({
+                files: req.files
+            });
+        }else{
+            return res.status(200).send({
+                message: fileName
+
+            });
+            
+        };
     }
     
 };
