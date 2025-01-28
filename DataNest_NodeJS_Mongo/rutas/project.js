@@ -5,6 +5,12 @@ var express = require('express');
 var ProjectController = require('../controlers/project');
 var router = express.Router();
 
+// maneja solicitudes HTTP 
+var multipart = require('connect-multiparty');
+
+// Archivos subidos que se almacenan temporalmente en carpeta uploads 
+var multipartMiddleware = multipart({uploadDir: './uploads'});
+
 // Define una ruta HTTP GET en la URL /home. 
 // Cuando un cliente accede a esta ruta, se ejecuta la función home del ProjectController.
 
