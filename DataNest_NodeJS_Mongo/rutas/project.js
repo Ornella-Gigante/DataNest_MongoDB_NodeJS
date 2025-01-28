@@ -32,6 +32,7 @@ router.put('/project/:id', ProjectController.updateProject);
 // Ruta de borrado 
 router.delete('/project/:id',ProjectController.deleteProject);
 // Ruta para las imagenes 
-router.post('/upload-image/:id', ProjectController.uploadImage);
+// Se ejecuta a través del middleware la subida del archivo y luego se guarda en carpeta uploads 
+router.post('/upload-image/:id',multipartMiddleware, ProjectController.uploadImage);
 
 module.exports = router; 
