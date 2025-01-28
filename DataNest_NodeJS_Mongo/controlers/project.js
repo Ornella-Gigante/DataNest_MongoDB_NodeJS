@@ -1,5 +1,6 @@
 'use strict'
 
+
 const project = require('../models/project');
 // Importación del modelo 
 var Project = require('../models/project'); 
@@ -119,24 +120,51 @@ var controller = {
 
     // Creacion de metodo para subir imagen 
 
-    uploadImage: function(req, res){
-
+    uploadImage: function(req, res) {
         var projectId = req.params.id; 
         var fileName = 'Imagen no subida';
-
-        if(req.files){
-
-            return res.status(200).send({
-                files: req.files
+    
+        if (req.files) {
+            // Obtener la ruta completa del archivo subido
+            var filePath = req.files.image.path;
+            // Extraer el nombre del archivo manualmente, sin usar 'path'
+            var fileSplit = filePath.split('/');
+            if (fileSplit.length === 1) {
+                // Si el separador es diferente (por ejemplo, en Windows)
+                fileSplit = filePath.split('\\');
+            }
+            var fileName = fileSplit[1]; 
+    
+            // Crear objeto de actualización para guardar el nombre del archivo en la base de datos
+            var update = { image: fileName };
+    
+            // Actualizar el proyecto con el nombre de la imagen
+            Project.findByIdAndUpdate(projectId, update, { new: true })
+                .then(project => {
+                    if (!project) {
+                        return res.status(404).send({ message: 'Proyecto no encontrado' });
+                    }
+                    return res.status(200).send({ 
+                        message: 'Imagen subida correctamente',
+                        project 
+                    });
+                })
+                .catch(err => {
+                    return res.status(500).send({ 
+                        message: 'Error al actualizar el proyecto',
+                        error: err.message 
+                    });
+                });
+        } else {
+            // Si no se subió ningún archivo
+            return res.status(400).send({
+                message: 'No se ha subido ningún archivo'
             });
-        }else{
-            return res.status(200).send({
-                message: fileName
-
-            });
-            
-        };
+        }
     }
+    
+
+
     
 };
 
