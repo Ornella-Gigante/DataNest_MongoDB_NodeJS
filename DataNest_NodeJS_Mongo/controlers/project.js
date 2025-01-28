@@ -5,6 +5,10 @@ const project = require('../models/project');
 // Importación del modelo 
 var Project = require('../models/project'); 
 
+// importacion libreria Node.js 
+
+var fs = require('fs');
+
 // Declara un objeto llamado controller, que contendrá las funciones que actuarán como controladores.
 var controller = {
 
@@ -134,8 +138,14 @@ var controller = {
                 fileSplit = filePath.split('\\');
             }
             var fileName = fileSplit[1]; 
-    
-            // Crear objeto de actualización para guardar el nombre del archivo en la base de datos
+            var extSplit = fileName.split('\.');
+            var fileExt = extSplit[1];
+
+            //
+
+            if(fileExt == 'png' || fileExt == 'jpg' || fileExt == 'jpeg' || fileExt=='gif'){
+
+                  // Crear objeto de actualización para guardar el nombre del archivo en la base de datos
             var update = { image: fileName };
     
             // Actualizar el proyecto con el nombre de la imagen
@@ -155,6 +165,19 @@ var controller = {
                         error: err.message 
                     });
                 });
+
+
+            } else{
+
+                fs.unlink(filePath, (err) => {
+                    return res.status(200).send({
+                        message: 'Extension not valid'
+
+                    });
+
+                })
+            }
+    
         } else {
             // Si no se subió ningún archivo
             return res.status(400).send({
