@@ -7,6 +7,7 @@ Welcome to DataNest, my first go-to project using the integration of **MongoDB**
 
 ## 📋 Table of Contents
 - [✨ Features](#-features)
+- [🔍 Requirement](#-features)
 - [📦 Technologies Used](#-technologies-used)
 - [⚙️ Installation](#️-installation)
 - [🚀 Usage](#-usage)
@@ -26,6 +27,12 @@ Welcome to DataNest, my first go-to project using the integration of **MongoDB**
 ✔️ Clean and modular code structure for scalability 🛠️  
 ✔️ Error handling and middleware implementation  
 ✔️ Easy-to-follow setup for quick deployment  
+
+---
+
+## Prerequisites
+
+- Node.js >=18.12
 
 ---
 
@@ -64,6 +71,7 @@ Follow these steps to get started with DataNest on your local machine:
 
 4. **Run the application**:
    ```bash
+   cd DataNest_MongoDB_NodeJS
    npm start
    ```
 
@@ -202,5 +210,3 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 If you found this project helpful, please give it a ⭐ on GitHub! It helps others discover it too.
 
 Happy coding! 💻✨
-
-
