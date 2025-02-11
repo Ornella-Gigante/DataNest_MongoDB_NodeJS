@@ -6,9 +6,6 @@ var mongoose = require('mongoose');
 // Importamos el archivo 'app', que probablemente contiene la configuración de Express para nuestra aplicación.
 var app = require('./app');
 
-// Definimos el puerto en el que se ejecutará el servidor.
-var port = 3700;
-
 // Configuramos mongoose para usar las Promesas nativas de JavaScript (Promise).
 // Esto asegura un manejo más moderno y consistente de las operaciones asíncronas.
 mongoose.Promise = global.Promise;
