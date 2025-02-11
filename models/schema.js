@@ -3,12 +3,12 @@
 // Creacion del modelo con el que se va a trabajar en mongodb 
 
 //Importacion d ela biblioteca mongoose para acceder a la bbdd mongodb
-var mongoose = require('mongoose');
+let mongoose = require('mongoose');
 
-var Schema = mongoose.Schema; 
+let Schema = mongoose.Schema; 
 
 // SE define la estrutura del proyecto que se usara en la bbdd 
-var ProjectSchema = Schema({
+let ProjectSchema = Schema({
     name: String,
     description: String,
     category: String, 
