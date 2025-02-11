@@ -1,9 +1,9 @@
 'use strict'
 
 
-const project = require('../models/project');
+const project = require('../../models/schema');
 // Importación del modelo 
-var Project = require('../models/project'); 
+var Project = require('../../models/schema'); 
 
 // importacion libreria Node.js 
 
