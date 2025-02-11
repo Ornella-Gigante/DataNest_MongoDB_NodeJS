@@ -1,0 +1,27 @@
+{
+    "env": {
+     "es2021": true,
+     "node": true
+    },
+    "extends": [
+     "standard-with-javascript",
+     "plugin:prettier/recommended",
+     "eslint:recommended",
+     "plugin:@eslint/js/recommended"
+    ],
+    "plugins": ["@eslint/js", "import", "prettier"],
+    "parserOptions": {
+     "ecmaVersion": "latest",
+     "sourceType": "module"
+    },
+    "ignorePatterns": ["src/**/*.test.ts"],
+    "rules": {
+     "prettier/prettier": "error",
+     "camelcase": "error",
+     "spaced-comment": "error",
+     "quotes": ["error", "single"],
+     "no-duplicate-imports": "error",
+     "no-unused-vars": "off",
+     "no-magic-numbers": "off"
+    }
+   }
