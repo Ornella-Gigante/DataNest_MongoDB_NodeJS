@@ -16,10 +16,16 @@ const rateLimit = require('express-rate-limit')
 
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(bodyParser.json());
-
 //CORS 
 app.use(cors())
-
+app.use(morgan('combined'));
+app.use(
+	rateLimit({
+		max: ONE_HUNDRED,
+		windowMs: SIXTY,
+		message: 'Trop de Requete à partir de cette adresse IP '
+	})
+);
 // Cargar archivo de ruta 
 
 const project_rutes = require('./rutas/project');
