@@ -2,7 +2,8 @@
   "dependencies": {
     "chalk": "^4.1.2",
     "cors": "^2.8.5",
-    "express-rate-limit": "^7.5.0"
+    "express-rate-limit": "^7.5.0",
+    "helmet": "^8.0.0"
   },
   "devDependencies": {
     "morgan": "^1.10.0"

@@ -9,6 +9,8 @@ const bodyParser = require('body-parser');
 const app = express(); 
 const morgan = require('morgan')
 const rateLimit = require('express-rate-limit')
+const helpmet = require('helpmet')
+
 // Cargando archivos de las rutas 
 
 // ====================== Middlewares ======================
@@ -19,6 +21,7 @@ app.use(bodyParser.json());
 //CORS 
 app.use(cors())
 app.use(morgan('combined'));
+app.use('helpmet')
 app.use(
 	rateLimit({
 		max: ONE_HUNDRED,
