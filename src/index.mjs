@@ -1,10 +1,10 @@
 'use strict'; // Activa el modo estricto para mejorar la calidad del código y evitar errores comunes.
 
 // Importamos la librería mongoose, que nos permite interactuar con MongoDB desde Node.js.
-var mongoose = require('mongoose');
+const mongoose = require('mongoose');
 const dotenv = require('dotenv')
 // Importamos el archivo 'app', que probablemente contiene la configuración de Express para nuestra aplicación.
-var app = require('./app');
+const app = require('./app');
 const chalk = requre('chalk')
 // Configuramos mongoose para usar las Promesas nativas de JavaScript (Promise).
 // Esto asegura un manejo más moderno y consistente de las operaciones asíncronas.
