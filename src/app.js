@@ -5,9 +5,7 @@ Finalmente, se exporta la instancia de la aplicación para ser utilizada en otro
 
 const cors = require('cors');
 const express = require('express'); 
-
 const bodyParser = require('body-parser');
-
 const app = express(); 
 
 // Cargando archivos de las rutas 
@@ -17,7 +15,6 @@ const app = express();
 
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(bodyParser.json());
-
 
 //CORS 
 app.use(cors())
@@ -30,10 +27,8 @@ const project_rutes = require('./rutas/project');
 
 // Ruta 
 
-
 app.use('/api', project_rutes);
 
 // exportar 
 
 module.exports = app; 
-
