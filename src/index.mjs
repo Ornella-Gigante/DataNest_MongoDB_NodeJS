@@ -5,7 +5,7 @@ var mongoose = require('mongoose');
 
 // Importamos el archivo 'app', que probablemente contiene la configuración de Express para nuestra aplicación.
 var app = require('./app');
-
+const chalk = requre('chalk')
 // Configuramos mongoose para usar las Promesas nativas de JavaScript (Promise).
 // Esto asegura un manejo más moderno y consistente de las operaciones asíncronas.
 mongoose.Promise = global.Promise;
@@ -21,9 +21,10 @@ mongoose.connect('mongodb://localhost:27017/portafolio')
         console.log("Connection to database stablished"); // Mensaje indicando que la conexión fue exitosa.
 
         // Una vez conectados a la base de datos, iniciamos el servidor.
-        app.listen(port, () => {
+        
+        app.listen(envs.PORT, () => {
             // Escuchamos en el puerto definido (3700) y mostramos un mensaje indicando que el servidor está funcionando.
-            console.log("Server working correctly!");
+            console.log(chalk.greenBright(`Server running on port http://localhost:${envs.PORT}/`));
         });
     })
     .catch(err => {
