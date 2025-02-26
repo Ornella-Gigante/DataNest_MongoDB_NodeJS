@@ -7,7 +7,8 @@ const cors = require('cors');
 const express = require('express'); 
 const bodyParser = require('body-parser');
 const app = express(); 
-
+const morgan = require('morgan')
+const rateLimit = require('express-rate-limit')
 // Cargando archivos de las rutas 
 
 // ====================== Middlewares ======================
