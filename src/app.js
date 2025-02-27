@@ -32,7 +32,7 @@ app.use(
 );
 // Cargar archivo de ruta 
 
-const project_rutes = require('./rutas/project');
+const project_rutes = require('./routes/project.routes');
 
 
 
