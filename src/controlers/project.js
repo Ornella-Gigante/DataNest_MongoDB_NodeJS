@@ -1,16 +1,15 @@
 'use strict'
 
-
 const project = require('../../models/schema');
 // Importación del modelo 
-var Project = require('../../models/schema'); 
+const Project = require('../../models/schema'); 
 
 // importacion libreria Node.js 
 
-var fs = require('fs');
+const fs = require('fs');
 
 // Declara un objeto llamado controller, que contendrá las funciones que actuarán como controladores.
-var controller = {
+const controller = {
 
     home: function(req, res) {
         return res.status(200).send({
@@ -48,7 +47,7 @@ var controller = {
 
 
     getProject: function(req, res) {
-        var projectId = req.params.id;
+        const projectId = req.params.id;
 
         if(projectId == null) return res.status(404).send({message:'El proyecto no existe'});
     
@@ -85,8 +84,8 @@ var controller = {
     // new:true sera el elemento actualizado 
 
     updateProject: function(req, res) {
-        var projectId = req.params.id;
-        var update = req.body;
+        const projectId = req.params.id;
+        const update = req.body;
     
         Project.findByIdAndUpdate(projectId, update, { new: true }) 
             .then(project => {
@@ -104,7 +103,7 @@ var controller = {
     // Creacion de metodo para borrar datos 
 
     deleteProject: function(req, res) {
-        var projectId = req.params.id;
+        const projectId = req.params.id;
     
         Project.findByIdAndDelete(projectId)
             .then(projectDeleted => {
@@ -125,19 +124,19 @@ var controller = {
     // Creacion de metodo para subir imagen 
 
     uploadImage: function(req, res) {
-        var projectId = req.params.id; 
-        var fileName = 'Imagen no subida';
+        const projectId = req.params.id; 
+        const fileName = 'Imagen no subida';
     
         if (req.files) {
             // Obtener la ruta completa del archivo subido
-            var filePath = req.files.image.path;
+            const filePath = req.files.image.path;
             // Extraer el nombre del archivo manualmente, sin usar 'path'
             var fileSplit = filePath.split('/');
             if (fileSplit.length === 1) {
                 // Si el separador es diferente (por ejemplo, en Windows)
                 fileSplit = filePath.split('\\');
             }
-            var fileName = fileSplit[1]; 
+            const fileName = fileSplit[1]; 
             var extSplit = fileName.split('\.');
             var fileExt = extSplit[1];
 
@@ -146,7 +145,7 @@ var controller = {
             if(fileExt == 'png' || fileExt == 'jpg' || fileExt == 'jpeg' || fileExt=='gif'){
 
                   // Crear objeto de actualización para guardar el nombre del archivo en la base de datos
-            var update = { image: fileName };
+            const update = { image: fileName };
     
             // Actualizar el proyecto con el nombre de la imagen
             Project.findByIdAndUpdate(projectId, update, { new: true })
