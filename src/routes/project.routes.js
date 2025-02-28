@@ -2,7 +2,7 @@
 
 
 var express = require('express');
-var ProjectController = require('../controlers/project');
+var ProjectController = require('../controllers/project.controllers');
 var router = express.Router();
 
 // maneja solicitudes HTTP 
